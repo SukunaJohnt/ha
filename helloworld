@@ -1,6 +1,3 @@
-
- --setclipboard(tostring(game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame))
-
  function SendMessage(url, message)
     local http = game:GetService("HttpService")
     local headers = {
@@ -49,21 +46,21 @@ end
 local url = "https://discord.com/api/webhooks/1237674507280449566/8cHhb3MhOxNA2eegoIrJGe2f6TcFJ453KkXGpPRs3r7GK6ouucnFBrGL4RUug7sAyF8G"
 local id = "770857166004944946"  -- ID USER
 
-getgenv().Ammount  = ""
 getgenv().Load = true 
 while task.wait(.5) do
      if Load == true then 
-
-        local Signals = {"Activated", "MouseButton1Down", "MouseButton2Down", "MouseButton1Click", "MouseButton2Click"}
-if game:GetService("Players").LocalPlayer.PlayerGui.Notification.VitoryFrame.Visible == true then 
-for _,v in pairs(game:GetService("Players").LocalPlayer.PlayerGui.Notification.VitoryFrame:GetChildren()) do
-    if v:IsA("ImageButton") and v.Name == "Next" then
-        for i,Signal in pairs(Signals) do
-            firesignal(v[Signal])
+    
+        if game:GetService("Players").LocalPlayer.PlayerGui.Notification.VitoryFrame.Visible == true then 
+            local Signals = {"Activated", "MouseButton1Down", "MouseButton2Down", "MouseButton1Click", "MouseButton2Click"}
+    for _,v in pairs(game:GetService("Players").LocalPlayer.PlayerGui.Notification.VitoryFrame:GetChildren()) do
+        if v:IsA("ImageButton") and v.Name == "Next" then
+            for i,Signal in pairs(Signals) do
+                firesignal(v[Signal])
+            end
         end
     end
-end
-end 
+    end     
+
 task.wait(.3)
 
  SendMessage(url, "Hey <@" .. tostring(id) .. "> , You just got an item!")
